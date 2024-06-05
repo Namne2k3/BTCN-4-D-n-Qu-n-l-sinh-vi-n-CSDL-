@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Lỗi</title>
+  <th:block th:replace="layout::link-css"></th:block>
+</head>
+<body class="container">
+  <th:block th:replace="layout::header"></th:block>
+    <div class="container mt-4" th:fragment="content">
+      <h1>Có lỗi</h1>
+    </div>
+  <th:block th:replace="layout::footer"></th:block>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<th:block th:replace="layout::head"></th:block>
+<body class="container">
+<th:block th:replace="layout::header"></th:block>
+
+<div class="container" th:fragment="content">
+    <h1>Cập nhật thông tin môn học</h1>
+    <form th:action="@{/monhoc/edit/{maMon}(maMon=${monhoc.getMaMon()})}" th:object="${monhoc}" method="post">
+        <div hidden class="col-6 mb-3">
+            <label for="maMon" class="form-label">Book ID:</label>
+            <input type="text" th:field="*{maMon}" id="maMon" class="form-control">
+            <span th:if="${#fields.hasErrors('maMon')}" th:errors="*{maMon}" class="text-danger"></span>
+        </div>
+
+        <div class="col-6 mb-3">
+            <label for="tenMonHoc" class="form-label">Book ID:</label>
+            <input type="text" th:field="*{tenMonHoc}" id="tenMonHoc" class="form-control">
+            <span th:if="${#fields.hasErrors('tenMonHoc')}" th:errors="*{tenMonHoc}" class="text-danger"></span>
+        </div>
+
+        <input type="submit" class="btn btn-primary" value="Cập nhật chỉnh sửa">
+    </form>
+    <br>
+    <a class="btn btn-outline-dark" th:href="@{/monhoc}">Trở về</a>
+</div>
+
+
+<th:block th:replace="layout::footer"></th:block>
+</body>
+</html>
